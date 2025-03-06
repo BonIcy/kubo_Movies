@@ -6,6 +6,8 @@ const { getData } = require('../controllers/get');
 const { deleteData } = require('../controllers/del');
 const { postData } = require('../controllers/add');
 const { updateData } = require('../controllers/upd.js');
+const { getMovies } = require('../controllers/moviesController');
+
 
 
 router.get('/test', (req, res)=>{
@@ -37,6 +39,9 @@ router.get('/:table',  (req, res) => {
     deleteData(req, res, table, id);
   });
   
+
+// filter movie (require params, example: http://localhost:XXXX/movies/movies?page=1&limit=5&title=Inception&category_id=2&order=desc )
+router.get('/movies', getMovies);
 
 
 module.exports = router;
