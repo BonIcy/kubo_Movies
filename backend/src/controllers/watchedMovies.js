@@ -29,7 +29,7 @@ const markAsWatched = async (req, res) => {
     const insertQuery = `INSERT INTO users_watched_movies (user_id, movie_id) VALUES (?, ?)`;
     await connection.query(insertQuery, [userId, movie_id]);
 
-    console.log('✅ Movie marked as watched successfully');
+    console.log('Movie marked as watched successfully');
     res.status(201).json({ message: 'Movie marked as watched successfully' });
 
   } catch (error) {

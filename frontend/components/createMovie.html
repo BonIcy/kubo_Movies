@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Película</title>
+    <link rel="stylesheet" href="../styles/createMovie.css">
+</head>
+<body>
+    <h1>Crear Película</h1>
+    <form id="create-movie-form">
+        <label for="title">Título:</label>
+        <input type="text" id="title" required>
+        
+        <label for="description">Descripción:</label>
+        <textarea id="description" required></textarea>
+        
+        <label for="release-date">Fecha de Estreno:</label>
+        <input type="date" id="release-date" required>
+        
+        <label for="category">Categoría:</label>
+        <select id="category" required></select>
+
+        <button type="submit">Crear Película</button>
+    </form>
+    <script src="../functions/createMovie.js"></script>
+</body>
+</html>
