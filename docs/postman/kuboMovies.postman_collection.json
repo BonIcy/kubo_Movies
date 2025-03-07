@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "d9b31a80-556b-42e1-911f-b445ae6d6139",
+		"name": "kuboMovies",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28464468",
+		"_collection_link": "https://lunar-satellite-422377.postman.co/workspace/WorkingCampusLand~e7a3c4d9-680e-46a3-9b94-b1d10b37402b/collection/28464468-d9b31a80-556b-42e1-911f-b445ae6d6139?action=share&source=collection_link&creator=28464468"
+	},
+	"item": [
+		{
+			"name": "get",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sSWQiOm51bGwsImlhdCI6MTc0MTMyOTE2MiwiZXhwIjoxNzQxMzY1MTYyfQ.J3PW_PPwzuiC4zozNmpmRV3v2HMlq8FZnxNa3-vQR1k",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:6774/movies/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6774",
+					"path": [
+						"movies",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post movies",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tittle\": \"Inception\",\r\n    \"description\": \"A mind-bending thriller about dream invasion.\",\r\n    \"release_date\": \"2010-07-16\",\r\n    \"category_id\": 2\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6774/movies/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6774",
+					"path": [
+						"movies",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get movie filter",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sSWQiOm51bGwsImlhdCI6MTc0MTMyOTE2MiwiZXhwIjoxNzQxMzY1MTYyfQ.J3PW_PPwzuiC4zozNmpmRV3v2HMlq8FZnxNa3-vQR1k",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:6774/movies/movies?page=1&category_id=2&order=desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6774",
+					"path": [
+						"movies",
+						"movies"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "5",
+							"disabled": true
+						},
+						{
+							"key": "title",
+							"value": "Inception",
+							"disabled": true
+						},
+						{
+							"key": "category_id",
+							"value": "2"
+						},
+						{
+							"key": "order",
+							"value": "desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"John\",\r\n  \"email\": \"john@gmail.com\",\r\n  \"password\": \"12345678\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6774/movies/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6774",
+					"path": [
+						"movies",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"john@gmail.com\",\r\n  \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6774/movies/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6774",
+					"path": [
+						"movies",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new Movies",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sSWQiOm51bGwsImlhdCI6MTc0MTMyOTE2MiwiZXhwIjoxNzQxMzY1MTYyfQ.J3PW_PPwzuiC4zozNmpmRV3v2HMlq8FZnxNa3-vQR1k",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:6774/movies/movies/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6774",
+					"path": [
+						"movies",
+						"movies",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mark as watched",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sSWQiOm51bGwsImlhdCI6MTc0MTMzMzA4NSwiZXhwIjoxNzQxMzY5MDg1fQ.BA56KbBKn7U897EgySy0OC8-K4TND14Gydkd057fbIE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"movie_id\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6774/movies/movies/watched",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6774",
+					"path": [
+						"movies",
+						"movies",
+						"watched"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

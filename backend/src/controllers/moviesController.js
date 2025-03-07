@@ -1,13 +1,13 @@
 const db = require('../db/config');
 
-const getMovies = async (req, res) => {
+const filterMovies = async (req, res) => {
   try {
     const connection = await db;
     
     let { page = 1, limit = 10, title, category_id, order = 'desc' } = req.query;
     page = parseInt(page, 10);
     limit = parseInt(limit, 10);
-    order = order.toLowerCase() === 'asc' ? 'ASC' : 'DESC'; // validar ordenamiento
+    order = order.toLowerCase() === 'asc' ? 'ASC' : 'DESC';
 
     let query = `
       SELECT m.id, m.tittle, m.description, m.release_date, c.name AS category
@@ -37,4 +37,4 @@ const getMovies = async (req, res) => {
   }
 };
 
-module.exports = { getMovies };
+module.exports = { filterMovies };
