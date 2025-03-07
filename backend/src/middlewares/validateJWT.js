@@ -3,12 +3,12 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const validateJwt = async (req, res, next) => {
-  console.log("Ejecutando validateJwt...");
+  console.log("running validateJwt...");
 
   const authHeader = req.headers['authorization'];
 
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
-    console.log("No se recibió un token o es inválido");
+    console.log("invalid token");
     return res.status(401).json({ error: 'Unauthorized, token required' });
   }
 
@@ -17,10 +17,10 @@ const validateJwt = async (req, res, next) => {
   try {
     const decodedToken = jwt.verify(token, process.env.JWT256);
     req.userId = decodedToken.id;
-    console.log("Token válido, usuario autorizado");
+    console.log("valid token, user created successfully");
     next();
   } catch (error) {
-    console.log("Token inválido");
+    console.log("invalid token");
     return res.status(401).json({ error: 'Invalid token' });
   }
 };
